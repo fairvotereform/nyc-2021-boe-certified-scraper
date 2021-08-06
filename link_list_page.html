@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  <head>
+    <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"64f92602ac",applicationID:"55450043"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-177800463-1"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("config", "UA-177800463-1", {"groups":"default","linker":{"domains":["nyc.ny.us","www.nyc.ny.us","votenyc.nyc","www.votenyc.nyc"]},"allow_ad_personalization_signals":false});</script>
+<meta name="description" content="" />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>.#back-top { right:40px; }#back-top span#button { background-color: #cccccc;} #back-top span#button:hover {opacity:1;filter:alpha(opacity = 1);background-color: #000000;}</style>
+<link rel="shortcut icon" href="/themes/custom/basic/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="https://vote.nyc/page/election-results-summary" />
+<link rel="shortlink" href="https://vote.nyc/node/351" />
+<link rel="revision" href="https://vote.nyc/page/election-results-summary" />
+
+    <title>Election Results Summary | NYC Board of Elections</title>
+    <link rel="stylesheet" media="all" href="/core/assets/vendor/normalize-css/normalize.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/misc/normalize-fixes.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/ajax-progress.module.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/align.module.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/autocomplete-loading.module.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/fieldgroup.module.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/container-inline.module.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/clearfix.module.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/details.module.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/hidden.module.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/item-list.module.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/js.module.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/nowrap.module.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/position-container.module.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/progress.module.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/reset-appearance.module.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/resize.module.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/sticky-header.module.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/system-status-counter.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/system-status-report-counters.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/system-status-report-general-info.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/tabledrag.module.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/tablesort.module.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/tree-child.module.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/modules/custom/dashcanvas/css/dashcanvas.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/modules/contrib/extlink/extlink.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/modules/contrib/ds/css/ds-2col.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/modules/contrib/ultimenu/css/ultimenu.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/modules/contrib/ultimenu/css/components/ultimenu.offcanvas.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/modules/contrib/ultimenu/css/theme/ultimenu--basic.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/modules/contrib/ultimenu/css/ultimenu.extras.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/modules/contrib/ultimenu/css/components/ultimenu.hamburger.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/modules/contrib/ultimenu/css/components/ultimenu.offcanvas.zoomin.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/modules/contrib/scroll_to_top/css/scroll_to_top.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/themes/custom/basic/css/base/base.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/themes/custom/basic/css/layout/layout.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/action-links.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/breadcrumb.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/button.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/container-inline.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/details.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/exposed-filters.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/field.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/form.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/icons.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/inline-form.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/item-list.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/link.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/links.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/menu.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/more-link.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/pager.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/tabledrag.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/tableselect.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/tablesort.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/tabs.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/textarea.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/ui-dialog.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/messages.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/libraries/jquery-modal/jquery.modal.min.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/themes/custom/basic/css/components/components.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="/themes/custom/basic/css/ultimenu.css?qwwb0m" />
+<link rel="stylesheet" media="all" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin-ext" />
+<link rel="stylesheet" media="all" href="/themes/custom/basic/css/theme/theme.css?qwwb0m" />
+<link rel="stylesheet" media="print" href="/themes/custom/basic/css/theme/print.css?qwwb0m" />
+
+    
+<!--[if lte IE 8]>
+<script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+
+          <script type="text/javascript" src="/modules/contrib/seckit/js/seckit.document_write.js"></script>
+        <link type="text/css" rel="stylesheet" id="seckit-clickjacking-no-body" media="all" href="/modules/contrib/seckit/css/seckit.no_body.css" />
+        <!-- stop SecKit protection -->
+        <noscript>
+        <link type="text/css" rel="stylesheet" id="seckit-clickjacking-noscript-tag" media="all" href="/modules/contrib/seckit/css/seckit.noscript_tag.css" />
+        <div id="seckit-noscript-tag">
+          Sorry, you need to enable JavaScript to visit this website.
+        </div>
+        </noscript></head>
+          
+      <body class="is-ultimenu-canvas is-ultimenu-canvas--hover internal-node-351 page-page-election-results-summary section-page role--anonymous with-subnav no-sidebar">
+    <div id="skip">
+      <a href="#main-menu" class="visually-hidden focusable skip-link">
+        Skip to main navigation
+      </a>
+    </div>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="layout-container">
+
+        <div class="region region-top">
+    
+<div id="block-topblockwithhelpfulmessages" class="block block-block-content block-block-content2a7a340c-4cdf-46bb-8e85-5b7a69758460">
+    
+        
+            
+                        <div class="clearfix text-formatted field field--name-field-top-teaser-text field--type-text-long field--label-hidden field__item"><p class="text-align-center" style="color: red; font-family:Rockwell Extra Bold; font-size:20px;"><strong>You are required to wear a mask/face covering and maintain 6 feet of distance when entering any Board of Elections facility</strong></p>
+</div>
+            
+    </div>
+
+  </div>
+
+  
+  
+  <header id="header">
+      <div class="container">
+                          <div class="region region-branding">
+    
+<div id="block-sitebranding" class="block block-system block-system-branding-block">
+    
+        
+          <a href="/" title="Home" rel="home" class="site-logo">
+      <img src="/sites/default/files/images/ckeditor/logos/BOE-Logo.png" alt="Home" />
+    </a>
+      </div>
+
+  </div>
+
+                                    <div class="region region-header">
+    
+<div id="block-callusnumber" class="block block-block-content block-block-content8f7c1f71-dc01-467c-8bb4-10182041217c">
+    
+        
+            
+                        <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><div class="large-call center notranslate">1-866-Vote-NYC</div>
+
+<h4 class="center notranslate" style="color:#ffffff; margin: 0!important;">TTY-212-487-5496</h4>
+</div>
+            
+    </div>
+
+<div id="block-gtranslateandtextresize" class="block block-votelocator block-translate-block">
+    
+        
+            
+<div class="gtranslate" id="google_translate_element" style="display:none;">&nbsp;</div>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: "en,es,zh-CN,zh-TW,bn,ko",
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+      autoDisplay: false,
+      multilanguagePage: true
+    }, 'google_translate_element');
+  }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<div class="gtranslate" id="google_translate_fixed">
+  <label for="gtranslate_options" class="visually-hidden">Translate</label>
+  <select name="gtranslate_options" id="gtranslate_options">
+    <option value="">Translate</option>
+    <option value="en" class="notranslate">English</option>
+    <option value="es" class="notranslate">Español</option>
+    <option value="bn" class="notranslate">বাংলা</option>
+    <option value="zh-CN" class="notranslate">简化字</option>
+    <option value="zh-TW" class="notranslate">中文</option>
+    <option value="ko" class="notranslate">한국어</option>
+  </select>
+</div>
+
+<div class="text-resize">Text Size</div>
+<div id="text-resize-popup">
+  <p>To change the text size on this website you can use your web browser's settings. Most browsers include functionality
+    to let you increase or decrease the text on a web page. For example, to increase text size using:</p>
+
+  <p><strong>Chrome</strong></p>
+
+  <p>In the menu to the right of the address bar, select and set Zoom level. Menu &gt; Zoom &gt; +</p>
+
+  <p><strong>Firefox</strong></p>
+
+  <p>In the View menu, select Zoom. View &gt; Zoom &gt; Zoom In</p>
+
+  <p><strong>Internet Explorer</strong></p>
+
+  <p>In the View menu, select Text Size. View &gt; Text Size &gt; Largest</p>
+
+  <p><strong>Safari</strong></p>
+
+  <p>In the View menu, select Zoom In. View &gt; Zoom In</p>
+
+  <p>Macintosh Shortcut: Command+</p>
+
+  <p><strong>No Web Browser Endorsement</strong></p>
+
+  <p>Common browsers are included in this page; mention of a specific browser does not imply endorsement or recommendation.</p>
+
+  <p>&nbsp;</p>
+</div>
+
+
+    </div>
+
+  </div>
+
+                </div>
+  </header><!-- /#header -->
+
+  <div id="mobile-header">
+      <div class="toggle-button toggle-menu">Toggle Menu</div>
+      <div class="mobile-title"><span class="field field--name-title field--type-string field--label-hidden">Election Results Summary</span>
+</div>
+      <div class="toggle-button toggle-search">Toggle Search</div>
+  </div>
+
+
+        <div id="menu">
+            <div class="region region-menu">
+    
+<div id="block-ultimenu-main-navigation" class="block block-ultimenu block-ultimenu-blockultimenu-main">
+    
+        
+            <ul id="ultimenu-main" data-ultimenu="main" class="ultimenu ultimenu--hover ultimenu--main ultimenu--htb ultimenu--horizontal ultimenu--basic"><li class="ultimenu__item uitem uitem--home uitem--1"><a href="/" data-drupal-link-system-path="&lt;front&gt;" title="" class="ultimenu__link">Home</a></li><li class="ultimenu__item uitem uitem--vote uitem--2 has-ultimenu"><a href="/page/how-vote" data-drupal-link-system-path="node/1" title="" class="ultimenu__link">Vote<span class="caret" aria-hidden="true"></span></a><section class="ultimenu__flyout"><div class="ultimenu__region region region-ultimenu-main-vote"><nav role="navigation" aria-labelledby="block-menu-register-menu" id="block-menu-register" class="block block-menu navigation menu--main"><h2 id="block-menu-register-menu">Register</h2><ul class="menu"><li class="menu-item"><a href="/page/register-vote" data-drupal-link-system-path="node/36">Register to Vote</a></li><li class="menu-item"><a href="/page/registration-deadlines" data-drupal-link-system-path="node/1786">Registration Deadlines</a></li><li class="menu-item"><a href="/page/am-i-registered" data-drupal-link-system-path="node/77">Am I Registered?</a></li><li class="menu-item"><a href="/page/party-affiliation" data-drupal-link-system-path="node/41">Party Affiliation</a></li><li class="menu-item"><a href="/page/voter-qualifications" data-drupal-link-system-path="node/51">Voter Qualifications</a></li><li class="menu-item"><a href="/page/upcoming-elections" title="Upcoming Elections" data-drupal-link-system-path="node/1721">Upcoming Elections</a></li><li class="menu-item"><a href="/page/voter-id" data-drupal-link-system-path="node/46">Voter ID</a></li></ul></nav><nav role="navigation" aria-labelledby="block-main-vote-menu" id="block-main-vote" class="block block-menu navigation menu--main"><h2 id="block-main-vote-menu">Vote</h2><ul class="menu"><li class="menu-item"><a href="/page/understanding-ballot" data-drupal-link-system-path="node/381">Understanding the ballot</a></li><li class="menu-item"><a href="/page/absentee-voting-0" data-drupal-link-system-path="node/1641">Absentee Voting</a></li><li class="menu-item"><a href="/page/military-and-overseas-voting" data-drupal-link-system-path="node/106">Military and Overseas Voting</a></li><li class="menu-item"><a href="/page/accessibility" data-drupal-link-system-path="node/101">Accessibility</a></li><li class="menu-item"><a href="/page/voters-rights" data-drupal-link-system-path="node/56">Voter&#039;s Rights</a></li><li class="menu-item"><a href="/page/faqs" data-drupal-link-system-path="node/546">FAQ</a></li><li class="menu-item"><a href="/page/videos" title="Videos - Absentee Voting" data-drupal-link-system-path="node/1571">Videos</a></li></ul></nav><nav role="navigation" aria-labelledby="block-main-elections-menu" id="block-main-elections" class="block block-menu navigation menu--main"><h2 id="block-main-elections-menu">NYC Elections</h2><ul class="menu"><li class="menu-item"><a href="/page/nyc-elections" data-drupal-link-system-path="node/61">About NYC Elections</a></li><li class="menu-item"><a href="/page/nyc-district-maps" data-drupal-link-system-path="node/76">NYC District Maps</a></li><li class="menu-item"><a href="/page/voter-enrollment-totals" data-drupal-link-system-path="node/66">Voter Enrollment Totals</a></li><li class="menu-item"><a href="https://www.vote.nyc/page/all-important-dates">Election Dates</a></li></ul></nav></div></section></li><li class="ultimenu__item uitem uitem--poll-workers uitem--3 has-ultimenu"><a href="" data-drupal-link-system-path="" title="" class="ultimenu__link">Poll Workers<span class="caret" aria-hidden="true"></span></a><section class="ultimenu__flyout"><div class="ultimenu__region region region-ultimenu-main-poll-workers"><nav role="navigation" aria-labelledby="block-menu-pollworkers-menu" id="block-menu-pollworkers" class="block block-menu navigation menu--main"><h2 id="block-menu-pollworkers-menu">Poll Workers</h2><ul class="menu"><li class="menu-item"><a href="/page/poll-workers" data-drupal-link-system-path="node/511">For Poll Workers</a></li><li class="menu-item"><a href="/page/information" data-drupal-link-system-path="node/181">Information</a></li><li class="menu-item"><a href="/page/poll-worker-positions" data-drupal-link-system-path="node/166">Poll Worker Positions</a></li><li class="menu-item"><a href="/page/training-videos" data-drupal-link-system-path="node/171">Training Videos</a></li><li class="menu-item"><a href="/page/ada-training-videos" data-drupal-link-system-path="node/506">ADA Training Videos</a></li><li class="menu-item"><a href="/page/poll-workers-announcements" data-drupal-link-system-path="node/611">Poll Workers Announcements</a></li></ul></nav></div></section></li><li class="ultimenu__item uitem uitem--run-for-office uitem--4 has-ultimenu"><a href="?nolink=" data-drupal-link-system-path="" title="" class="ultimenu__link" data-drupal-link-query="{&quot;nolink&quot;:&quot;&quot;}">Run for Office<span class="caret" aria-hidden="true"></span></a><section class="ultimenu__flyout"><div class="ultimenu__region region region-ultimenu-main-run-for-office"><nav role="navigation" aria-labelledby="block-runoffice-menu" id="block-runoffice" class="block block-menu navigation menu--main"><h2 id="block-runoffice-menu">Run for Office</h2><ul class="menu"><li class="menu-item"><a href="/page/list-candidates" data-drupal-link-system-path="node/11">List of Candidates</a></li><li class="menu-item"><a href="/page/candidates" data-drupal-link-system-path="node/111">For Candidates</a></li><li class="menu-item"><a href="/page/candidate-announcements-notices" data-drupal-link-system-path="node/646">Candidate Announcements &amp; Notices</a></li></ul></nav></div></section></li><li class="ultimenu__item uitem is-active-trail uitem--about-us uitem--5 has-ultimenu"><a href="/" data-drupal-link-system-path="&lt;front&gt;" title="" class="ultimenu__link">About Us<span class="caret" aria-hidden="true"></span></a><section class="ultimenu__flyout"><div class="ultimenu__region region region-ultimenu-main-about-us"><nav role="navigation" aria-labelledby="block-boardelections-menu" id="block-boardelections" class="block block-menu navigation menu--main"><h2 id="block-boardelections-menu">NYC Board of Elections</h2><ul class="menu"><li class="menu-item"><a href="/page/about-nyc-board-elections" data-drupal-link-system-path="node/186">About the NYC Board</a></li><li class="menu-item"><a href="/page/mission-statement" data-drupal-link-system-path="node/501">Mission Statement</a></li><li class="menu-item"><a href="/page/commissioners-management" data-drupal-link-system-path="node/191">Commissioners &amp; Management</a></li><li class="menu-item"><a href="/page/personnel-guidelines" data-drupal-link-system-path="node/196">Personnel Guidelines</a></li><li class="menu-item"><a href="/page/employment-opportunities" data-drupal-link-system-path="node/601">Employment Opportunities</a></li></ul></nav><nav role="navigation" aria-labelledby="block-meetings-menu" id="block-meetings" class="block block-menu navigation menu--main"><h2 id="block-meetings-menu">Meetings</h2><ul class="menu"><li class="menu-item"><a href="/page/commissioners-meetings" data-drupal-link-system-path="node/206">Live Stream Meetings</a></li><li class="menu-item"><a href="/page/commissioners-meeting-agendas" data-drupal-link-system-path="node/211">Meeting Agendas</a></li><li class="menu-item"><a href="/page/commissioners-minutes" data-drupal-link-system-path="node/461">Commissioners&#039; Minutes</a></li><li class="menu-item"><a href="/page/video-archive" data-drupal-link-system-path="node/266">Video Archive</a></li></ul></nav><nav role="navigation" aria-labelledby="block-information-menu" id="block-information" class="block block-menu navigation menu--main"><h2 id="block-information-menu">Information</h2><ul class="menu"><li class="menu-item"><a href="/news" data-drupal-link-system-path="news">Important Notices</a></li><li class="menu-item"><a href="/page/annual-reports" data-drupal-link-system-path="node/276">Annual Reports</a></li><li class="menu-item menu-item--active-trail"><a href="/page/election-results-summary" data-drupal-link-system-path="node/351" class="is-active">Election Results</a></li><li class="menu-item"><a href="/page/publications-forms" data-drupal-link-system-path="node/516">Publications &amp; Forms</a></li><li class="menu-item"><a href="/page/news" data-drupal-link-system-path="node/651">News</a></li></ul></nav><nav role="navigation" aria-labelledby="block-contactus-menu" id="block-contactus" class="block block-menu navigation menu--main"><h2 id="block-contactus-menu">Contact Us</h2><ul class="menu"><li class="menu-item"><a href="/page/contact-us" data-drupal-link-system-path="node/96">Contact Us</a></li></ul></nav></div></section></li></ul>
+    </div>
+
+<div class="search-api-page-block-form-pages-api search-api-page-block-form search-form search-block-form container-inline block block-search-api-page block-search-api-page-form-block" data-drupal-selector="search-api-page-block-form-pages-api-2" id="block-searchapipagesearchblockform-2--2">
+    
+        
+            <form action="/page/election-results-summary" method="post" id="search-api-page-block-form-pages-api--2" accept-charset="UTF-8">
+  <div class="js-form-item form-item js-form-type-search form-type-search js-form-item-keys form-item-keys form-no-label">
+      <label for="edit-keys--2" class="visually-hidden">Search</label>
+        <input title="Enter the terms you wish to search for." data-drupal-selector="edit-keys" type="search" id="edit-keys--2" name="keys" value="" size="15" maxlength="128" class="form-search" />
+
+        </div>
+<input autocomplete="off" data-drupal-selector="form-st8p9y2-nznybckiknjg4ohjkfq-roydqloa3v6rybc" type="hidden" name="form_build_id" value="form-ST8p9Y2_NZnyBCkIknjG4OHJkFQ_RoydQloa3V6rYbc" />
+<input data-drupal-selector="edit-search-api-page-block-form-pages-api-2" type="hidden" name="form_id" value="search_api_page_block_form_pages_api" />
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions--2"><input class="search-form__submit button js-form-submit form-submit" data-drupal-selector="edit-submit" type="submit" id="edit-submit--2" name="op" value="Search" />
+</div>
+
+</form>
+
+    </div>
+
+  </div>
+
+          <div class="toggle-button toggle-search">Toggle Search</div>
+      </div>
+  
+        <div id="search">
+            <div class="region region-search">
+    
+<div class="search-api-page-block-form-pages-api search-api-page-block-form search-form search-block-form container-inline block block-search-api-page block-search-api-page-form-block" data-drupal-selector="search-api-page-block-form-pages-api-4" id="block-searchapipagesearchblockform--2">
+    
+        
+            <form action="/page/election-results-summary" method="post" id="search-api-page-block-form-pages-api--4" accept-charset="UTF-8">
+  <div class="js-form-item form-item js-form-type-search form-type-search js-form-item-keys form-item-keys form-no-label">
+      <label for="edit-keys--4" class="visually-hidden">Search</label>
+        <input title="Enter the terms you wish to search for." data-drupal-selector="edit-keys" type="search" id="edit-keys--4" name="keys" value="" size="15" maxlength="128" class="form-search" />
+
+        </div>
+<input autocomplete="off" data-drupal-selector="form-v5n3df5nhhxbdcwxpru0uim5uok4f-phak-tqn8yti" type="hidden" name="form_build_id" value="form--v5n3Df5NHHXbDcWxpru0uim5UOK4f-PHAk_tqn8ytI" />
+<input data-drupal-selector="edit-search-api-page-block-form-pages-api-4" type="hidden" name="form_id" value="search_api_page_block_form_pages_api" />
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions--4"><input class="search-form__submit button js-form-submit form-submit" data-drupal-selector="edit-submit" type="submit" id="edit-submit--4" name="op" value="Search" />
+</div>
+
+</form>
+
+    </div>
+
+  </div>
+
+      </div>
+  
+      <div id="information">  <div class="region region-information">
+    
+<div id="block-important-message" class="block block-votelocator block-message-block">
+    
+        
+            
+
+    </div>
+
+  </div>
+</div>
+  
+  
+  
+  <div id="main">
+      <div class="container">
+          <section id="content">
+
+              <div id="content-header">
+
+                  
+
+                                        <div id="highlighted">  <div class="region region-highlighted">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+</div>
+                  
+                  
+
+                  
+                  
+                  
+
+                  
+                  
+              </div><!-- /#content-header -->
+
+              <div id="content-area">
+                    <div class="region region-content">
+    
+<div id="block-basic-page-title" class="block block-core block-page-title-block">
+    
+        
+            
+  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Election Results Summary</span>
+</h1>
+
+
+    </div>
+
+<div id="block-basic-content" class="block block-system block-system-main-block">
+    
+        
+            
+
+<article role="article" about="/page/election-results-summary" class="node">
+
+  
+  <div class="content">
+    
+                        <div class="field field--name-field-show-toc field--type-boolean field--label-hidden field__item"><h3 class="toc">What's on this Page:</h3></div>
+            
+            <div class="field field--name-field-paragraph field--type-field-collection field--label-hidden field__items">
+                            <div class="field__item" id="p0" data-id="0"><div class="field-collection-item field-collection-item--type-field-paragraph field-collection-item--view-mode-default ds-2col clearfix">
+
+  
+
+  <div class="group-left">
+    
+                        <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="/sites/default/files/icons/official-report-icon.png" width="43" height="58" alt="" typeof="foaf:Image" />
+
+</div>
+            
+  </div>
+
+  <div class="group-right">
+    
+
+                        <h2 class="field field--name-field-header field--type-string field--label-hidden field__item">PRIMARY - JUNE 22, 2021 - Ranked Choice Voting</h2>
+            
+
+                        <div class="clearfix text-formatted field field--name-field-content field--type-text-long field--label-hidden field__item"><table class="simple-table"><tbody><tr><th>Contest</th>
+			<th colspan="1">PDF</th>
+			<th colspan="1">HTML</th>
+		</tr><tr><td>Citywide Democratic Mayor Citywide</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Mayor Citywide.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024306_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Citywide Democratic Public Advocate Citywide</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Public Advocate Citywide.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024408_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Citywide Democratic City Comptroller Citywide</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM City Comptroller Citywide.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024314_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>New York Democratic Borough President New York</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Borough President New York.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024307_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>New York Democratic Member of the City Council 1st Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 1st Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024340_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>New York Democratic Member of the City Council 2nd Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 2nd Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024463_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>New York Democratic Member of the City Council 3rd Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 3rd Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024321_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>New York Democratic Member of the City Council 5th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 5th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024332_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>New York Democratic Member of the City Council 6th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 6th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024361_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>New York Democratic Member of the City Council 7th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 7th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024318_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>New York Democratic Member of the City Council 8th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 8th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024470_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>New York Democratic Member of the City Council 10th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 10th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024370_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Bronx Democratic Borough President Bronx</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Borough President Bronx.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024339_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Bronx Democratic Member of the City Council 8th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 8th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024470_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Bronx Democratic Member of the City Council 11th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 11th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024329_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Bronx Democratic Member of the City Council 12th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 12th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024328_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Bronx Democratic Member of the City Council 13th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 13th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024341_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Bronx Democratic Member of the City Council 14th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 14th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024327_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Bronx Democratic Member of the City Council 15th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 15th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024357_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Bronx Democratic Member of the City Council 16th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 16th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024330_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Bronx Democratic Member of the City Council 17th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 17th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024481_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Bronx Democratic Member of the City Council 18th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 18th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024355_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Bronx Democratic Member of the City Council 22nd Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 22nd Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024349_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Kings Democratic Borough President Kings</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Borough President Kings.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024336_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Kings Democratic Member of the City Council 33rd Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 33rd Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024309_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Kings Democratic Member of the City Council 34th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 34th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024319_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Kings Democratic Member of the City Council 35th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 35th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024335_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Kings Democratic Member of the City Council 36th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 36th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024379_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Kings Democratic Member of the City Council 37th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 37th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024389_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Kings Democratic Member of the City Council 38th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 38th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024352_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Kings Democratic Member of the City Council 39th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 39th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024353_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Kings Democratic Member of the City Council 40th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 40th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024348_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Kings Democratic Member of the City Council 41st Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 41st Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024424_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Kings Democratic Member of the City Council 42nd Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 42nd Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024323_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Kings Democratic Member of the City Council 45th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 45th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024375_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Kings Democratic Member of the City Council 46th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 46th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024338_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Kings Democratic Member of the City Council 47th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 47th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024394_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Kings Democratic Member of the City Council 48th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 48th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024337_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Queens Democratic Borough President Queens</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Borough President Queens.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024415_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Queens Democratic Member of the City Council 19th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 19th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024350_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Queens Democratic Member of the City Council 20th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 20th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024346_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Queens Democratic Member of the City Council 21st Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 21st Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024358_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Queens Democratic Member of the City Council 22nd Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 22nd Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024349_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Queens Democratic Member of the City Council 23rd Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 23rd Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024351_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Queens Democratic Member of the City Council 24th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 24th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024399_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Queens Democratic Member of the City Council 25th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 25th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024310_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Queens Democratic Member of the City Council 26th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 26th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024311_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Queens Democratic Member of the City Council 27th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 27th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024312_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Queens Democratic Member of the City Council 28th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 28th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024406_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Queens Democratic Member of the City Council 29th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 29th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024324_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Queens Democratic Member of the City Council 30th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 30th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024414_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Queens Democratic Member of the City Council 31st Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 31st Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024462_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Queens Democratic Member of the City Council 32nd Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 32nd Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024320_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Queens Democratic Member of the City Council 34th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 34th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024319_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Richmond Democratic Borough President Richmond</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Borough President Richmond.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024458_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Richmond Democratic Member of the City Council 49th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/DEM Council Member 49th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024326_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Citywide Republican Mayor Citywide</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/REP Mayor Citywide.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024425_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Bronx Republican Member of the City Council 15th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/REP Council Member 15th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024524_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Queens Republican Member of the City Council 19th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/REP Council Member 19th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024410_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Queens Republican Member of the City Council 23rd Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/REP Council Member 23rd Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024546_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Queens Republican Member of the City Council 24th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/REP Council Member 24th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024554_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Queens Republican Member of the City Council 32nd Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/REP Council Member 32nd Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024550_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Richmond Republican Borough President Richmond</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/REP Borough President Richmond.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024496_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr><tr><td>Queens Conservative Member of the City Council 19th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/CON Council Member 19th Council District.pdf" target="“_blank”">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/rcv/024500_1.html" target="“_blank”">RCV Recap</a></td>
+		</tr></tbody></table></div>
+            
+  </div>
+
+</div>
+
+</div>
+                            <div class="field__item" id="p1" data-id="1"><div class="field-collection-item field-collection-item--type-field-paragraph field-collection-item--view-mode-default ds-2col clearfix">
+
+  
+
+  <div class="group-left">
+    
+                        <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="/sites/default/files/icons/official-report-icon.png" width="43" height="58" alt="" typeof="foaf:Image" />
+
+</div>
+            
+  </div>
+
+  <div class="group-right">
+    
+
+                        <h2 class="field field--name-field-header field--type-string field--label-hidden field__item">PRIMARY - JUNE 22, 2021</h2>
+            
+
+                        <div class="clearfix text-formatted field field--name-field-content field--type-text-long field--label-hidden field__item"><table class="simple-table"><tbody><tr><th>Contest</th>
+			<th colspan="2">PDF</th>
+			<th colspan="2">CSV</th>
+		</tr><tr><td>New York Democratic District Attorney New York</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01100800010New York Democratic District Attorney New York Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01100800010New York Democratic District Attorney New York EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01100800010New York Democratic District Attorney New York Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01100800010New York Democratic District Attorney New York EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>New York Democratic Judge of the Civil Court - District 2nd Municipal Court District - New York</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01101001002New York Democratic Judge of the Civil Court - District 2nd Municipal Court District - New York Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01101001002New York Democratic Judge of the Civil Court - District 2nd Municipal Court District - New York EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01101001002New York Democratic Judge of the Civil Court - District 2nd Municipal Court District - New York Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01101001002New York Democratic Judge of the Civil Court - District 2nd Municipal Court District - New York EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>New York Democratic Judge of the Civil Court - District 5th Municipal Court District - New York</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01101001005New York Democratic Judge of the Civil Court - District 5th Municipal Court District - New York Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01101001005New York Democratic Judge of the Civil Court - District 5th Municipal Court District - New York EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01101001005New York Democratic Judge of the Civil Court - District 5th Municipal Court District - New York Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01101001005New York Democratic Judge of the Civil Court - District 5th Municipal Court District - New York EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>New York Democratic Female District Leader Democratic Leadership District 69 Part A</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110460069ANew York Democratic Female District Leader Democratic Leadership District 69 Part A Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110460069ANew York Democratic Female District Leader Democratic Leadership District 69 Part A EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110460069ANew York Democratic Female District Leader Democratic Leadership District 69 Part A Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110460069ANew York Democratic Female District Leader Democratic Leadership District 69 Part A EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>New York Democratic Female District Leader Democratic Leadership District 70 Part D</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110460070DNew York Democratic Female District Leader Democratic Leadership District 70 Part D Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110460070DNew York Democratic Female District Leader Democratic Leadership District 70 Part D EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110460070DNew York Democratic Female District Leader Democratic Leadership District 70 Part D Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110460070DNew York Democratic Female District Leader Democratic Leadership District 70 Part D EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>New York Democratic Female District Leader Democratic Leadership District 72 Part A</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110460072ANew York Democratic Female District Leader Democratic Leadership District 72 Part A Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110460072ANew York Democratic Female District Leader Democratic Leadership District 72 Part A EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110460072ANew York Democratic Female District Leader Democratic Leadership District 72 Part A Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110460072ANew York Democratic Female District Leader Democratic Leadership District 72 Part A EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>New York Democratic Female District Leader Democratic Leadership District 65 Part D</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110470065DNew York Democratic Female District Leader Democratic Leadership District 65 Part D Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110470065DNew York Democratic Female District Leader Democratic Leadership District 65 Part D EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110470065DNew York Democratic Female District Leader Democratic Leadership District 65 Part D Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110470065DNew York Democratic Female District Leader Democratic Leadership District 65 Part D EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>New York Democratic Female District Leader Democratic Leadership District 68 Part B</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110470068BNew York Democratic Female District Leader Democratic Leadership District 68 Part B Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110470068BNew York Democratic Female District Leader Democratic Leadership District 68 Part B EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110470068BNew York Democratic Female District Leader Democratic Leadership District 68 Part B Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110470068BNew York Democratic Female District Leader Democratic Leadership District 68 Part B EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>New York Democratic Female District Leader Democratic Leadership District 68 Part C</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110470068CNew York Democratic Female District Leader Democratic Leadership District 68 Part C Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110470068CNew York Democratic Female District Leader Democratic Leadership District 68 Part C EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110470068CNew York Democratic Female District Leader Democratic Leadership District 68 Part C Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110470068CNew York Democratic Female District Leader Democratic Leadership District 68 Part C EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>New York Democratic Female District Leader Democratic Leadership District 72 Part B</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110470072BNew York Democratic Female District Leader Democratic Leadership District 72 Part B Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110470072BNew York Democratic Female District Leader Democratic Leadership District 72 Part B EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110470072BNew York Democratic Female District Leader Democratic Leadership District 72 Part B Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110470072BNew York Democratic Female District Leader Democratic Leadership District 72 Part B EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>New York Democratic Female District Leader Democratic Leadership District 76 Part A</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110470076ANew York Democratic Female District Leader Democratic Leadership District 76 Part A Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110470076ANew York Democratic Female District Leader Democratic Leadership District 76 Part A EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110470076ANew York Democratic Female District Leader Democratic Leadership District 76 Part A Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110470076ANew York Democratic Female District Leader Democratic Leadership District 76 Part A EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>New York Democratic Male District Leader Democratic Leadership District 68 Part B</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110480068BNew York Democratic Male District Leader Democratic Leadership District 68 Part B Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110480068BNew York Democratic Male District Leader Democratic Leadership District 68 Part B EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110480068BNew York Democratic Male District Leader Democratic Leadership District 68 Part B Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110480068BNew York Democratic Male District Leader Democratic Leadership District 68 Part B EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>New York Democratic Male District Leader Democratic Leadership District 68 Part C</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110480068CNew York Democratic Male District Leader Democratic Leadership District 68 Part C Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110480068CNew York Democratic Male District Leader Democratic Leadership District 68 Part C EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110480068CNew York Democratic Male District Leader Democratic Leadership District 68 Part C Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110480068CNew York Democratic Male District Leader Democratic Leadership District 68 Part C EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>New York Democratic Male District Leader Democratic Leadership District 68 Part D</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110480068DNew York Democratic Male District Leader Democratic Leadership District 68 Part D Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110480068DNew York Democratic Male District Leader Democratic Leadership District 68 Part D EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110480068DNew York Democratic Male District Leader Democratic Leadership District 68 Part D Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110480068DNew York Democratic Male District Leader Democratic Leadership District 68 Part D EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>New York Democratic Male District Leader Democratic Leadership District 69 Part A</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110480069ANew York Democratic Male District Leader Democratic Leadership District 69 Part A Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110480069ANew York Democratic Male District Leader Democratic Leadership District 69 Part A EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110480069ANew York Democratic Male District Leader Democratic Leadership District 69 Part A Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110480069ANew York Democratic Male District Leader Democratic Leadership District 69 Part A EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>New York Democratic Male District Leader Democratic Leadership District 70 Part D</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110480070DNew York Democratic Male District Leader Democratic Leadership District 70 Part D Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110480070DNew York Democratic Male District Leader Democratic Leadership District 70 Part D EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110480070DNew York Democratic Male District Leader Democratic Leadership District 70 Part D Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110480070DNew York Democratic Male District Leader Democratic Leadership District 70 Part D EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>New York Democratic Male District Leader Democratic Leadership District 72 Part B</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110480072BNew York Democratic Male District Leader Democratic Leadership District 72 Part B Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110480072BNew York Democratic Male District Leader Democratic Leadership District 72 Part B EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110480072BNew York Democratic Male District Leader Democratic Leadership District 72 Part B Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/0110480072BNew York Democratic Male District Leader Democratic Leadership District 72 Part B EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>New York Democratic Delegate to Judicial Convention 68th Assembly District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01106000068New York Democratic Delegate to Judicial Convention 68th Assembly District Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01106000068New York Democratic Delegate to Judicial Convention 68th Assembly District EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01106000068New York Democratic Delegate to Judicial Convention 68th Assembly District Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01106000068New York Democratic Delegate to Judicial Convention 68th Assembly District EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>New York Democratic Delegate to Judicial Convention 69th Assembly District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01106000069New York Democratic Delegate to Judicial Convention 69th Assembly District Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01106000069New York Democratic Delegate to Judicial Convention 69th Assembly District EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01106000069New York Democratic Delegate to Judicial Convention 69th Assembly District Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01106000069New York Democratic Delegate to Judicial Convention 69th Assembly District EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>New York Democratic Delegate to Judicial Convention 71st Assembly District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01106000071New York Democratic Delegate to Judicial Convention 71st Assembly District Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01106000071New York Democratic Delegate to Judicial Convention 71st Assembly District EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01106000071New York Democratic Delegate to Judicial Convention 71st Assembly District Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01106000071New York Democratic Delegate to Judicial Convention 71st Assembly District EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>New York Democratic Delegate to Judicial Convention 72nd Assembly District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01106000072New York Democratic Delegate to Judicial Convention 72nd Assembly District Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01106000072New York Democratic Delegate to Judicial Convention 72nd Assembly District EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01106000072New York Democratic Delegate to Judicial Convention 72nd Assembly District Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01106000072New York Democratic Delegate to Judicial Convention 72nd Assembly District EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>New York Democratic Alternate Delegate to the Judicial Convention 71st Assembly District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01106100071New York Democratic Alternate Delegate to the Judicial Convention 71st Assembly District Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01106100071New York Democratic Alternate Delegate to the Judicial Convention 71st Assembly District EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01106100071New York Democratic Alternate Delegate to the Judicial Convention 71st Assembly District Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01106100071New York Democratic Alternate Delegate to the Judicial Convention 71st Assembly District EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>New York Democratic Alternate Delegate to the Judicial Convention 72nd Assembly District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01106100072New York Democratic Alternate Delegate to the Judicial Convention 72nd Assembly District Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01106100072New York Democratic Alternate Delegate to the Judicial Convention 72nd Assembly District EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01106100072New York Democratic Alternate Delegate to the Judicial Convention 72nd Assembly District Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01106100072New York Democratic Alternate Delegate to the Judicial Convention 72nd Assembly District EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>Bronx Democratic Judge of the Civil Court - District 2nd Municipal Court District - Bronx</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01201001102Bronx Democratic Judge of the Civil Court - District 2nd Municipal Court District - Bronx Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01201001102Bronx Democratic Judge of the Civil Court - District 2nd Municipal Court District - Bronx EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01201001102Bronx Democratic Judge of the Civil Court - District 2nd Municipal Court District - Bronx Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01201001102Bronx Democratic Judge of the Civil Court - District 2nd Municipal Court District - Bronx EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>Bronx Democratic Delegate to Judicial Convention 77th Assembly District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01206000077Bronx Democratic Delegate to Judicial Convention 77th Assembly District Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01206000077Bronx Democratic Delegate to Judicial Convention 77th Assembly District EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01206000077Bronx Democratic Delegate to Judicial Convention 77th Assembly District Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01206000077Bronx Democratic Delegate to Judicial Convention 77th Assembly District EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>Bronx Democratic Delegate to Judicial Convention 79th Assembly District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01206000079Bronx Democratic Delegate to Judicial Convention 79th Assembly District Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01206000079Bronx Democratic Delegate to Judicial Convention 79th Assembly District EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01206000079Bronx Democratic Delegate to Judicial Convention 79th Assembly District Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01206000079Bronx Democratic Delegate to Judicial Convention 79th Assembly District EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>Bronx Democratic Delegate to Judicial Convention 80th Assembly District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01206000080Bronx Democratic Delegate to Judicial Convention 80th Assembly District Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01206000080Bronx Democratic Delegate to Judicial Convention 80th Assembly District EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01206000080Bronx Democratic Delegate to Judicial Convention 80th Assembly District Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01206000080Bronx Democratic Delegate to Judicial Convention 80th Assembly District EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>Bronx Democratic Delegate to Judicial Convention 81st Assembly District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01206000081Bronx Democratic Delegate to Judicial Convention 81st Assembly District Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01206000081Bronx Democratic Delegate to Judicial Convention 81st Assembly District EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01206000081Bronx Democratic Delegate to Judicial Convention 81st Assembly District Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01206000081Bronx Democratic Delegate to Judicial Convention 81st Assembly District EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>Bronx Democratic Delegate to Judicial Convention 82nd Assembly District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01206000082Bronx Democratic Delegate to Judicial Convention 82nd Assembly District Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01206000082Bronx Democratic Delegate to Judicial Convention 82nd Assembly District EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01206000082Bronx Democratic Delegate to Judicial Convention 82nd Assembly District Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01206000082Bronx Democratic Delegate to Judicial Convention 82nd Assembly District EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>Kings Democratic Surrogate Kings</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01300600012Kings Democratic Surrogate Kings Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01300600012Kings Democratic Surrogate Kings EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01300600012Kings Democratic Surrogate Kings Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01300600012Kings Democratic Surrogate Kings EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>Kings Democratic Judge of the Civil Court - County Kings</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01300700012Kings Democratic Judge of the Civil Court - County Kings Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01300700012Kings Democratic Judge of the Civil Court - County Kings EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01300700012Kings Democratic Judge of the Civil Court - County Kings Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01300700012Kings Democratic Judge of the Civil Court - County Kings EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>Kings Democratic Judge of the Civil Court - District 2nd Municipal Court District - Kings</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01301001202Kings Democratic Judge of the Civil Court - District 2nd Municipal Court District - Kings Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01301001202Kings Democratic Judge of the Civil Court - District 2nd Municipal Court District - Kings EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01301001202Kings Democratic Judge of the Civil Court - District 2nd Municipal Court District - Kings Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01301001202Kings Democratic Judge of the Civil Court - District 2nd Municipal Court District - Kings EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>Kings Democratic Judge of the Civil Court - District 7th Municipal Court District - Kings</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01301001207Kings Democratic Judge of the Civil Court - District 7th Municipal Court District - Kings Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01301001207Kings Democratic Judge of the Civil Court - District 7th Municipal Court District - Kings EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01301001207Kings Democratic Judge of the Civil Court - District 7th Municipal Court District - Kings Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01301001207Kings Democratic Judge of the Civil Court - District 7th Municipal Court District - Kings EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>Kings Democratic Delegate to Judicial Convention 50th Assembly District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01306000050Kings Democratic Delegate to Judicial Convention 50th Assembly District Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01306000050Kings Democratic Delegate to Judicial Convention 50th Assembly District EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01306000050Kings Democratic Delegate to Judicial Convention 50th Assembly District Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01306000050Kings Democratic Delegate to Judicial Convention 50th Assembly District EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>Kings Democratic Delegate to Judicial Convention 58th Assembly District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01306000058Kings Democratic Delegate to Judicial Convention 58th Assembly District Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01306000058Kings Democratic Delegate to Judicial Convention 58th Assembly District EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01306000058Kings Democratic Delegate to Judicial Convention 58th Assembly District Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01306000058Kings Democratic Delegate to Judicial Convention 58th Assembly District EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>Kings Democratic Alternate Delegate to the Judicial Convention 58th Assembly District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01306100058Kings Democratic Alternate Delegate to the Judicial Convention 58th Assembly District Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01306100058Kings Democratic Alternate Delegate to the Judicial Convention 58th Assembly District EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01306100058Kings Democratic Alternate Delegate to the Judicial Convention 58th Assembly District Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01306100058Kings Democratic Alternate Delegate to the Judicial Convention 58th Assembly District EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>Queens Democratic Judge of the Civil Court - County Queens</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01400700013Queens Democratic Judge of the Civil Court - County Queens Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01400700013Queens Democratic Judge of the Civil Court - County Queens EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01400700013Queens Democratic Judge of the Civil Court - County Queens Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01400700013Queens Democratic Judge of the Civil Court - County Queens EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>Queens Democratic Judge of the Civil Court - District 4th Municipal Court District - Queens</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01401001304Queens Democratic Judge of the Civil Court - District 4th Municipal Court District - Queens Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01401001304Queens Democratic Judge of the Civil Court - District 4th Municipal Court District - Queens EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01401001304Queens Democratic Judge of the Civil Court - District 4th Municipal Court District - Queens Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01401001304Queens Democratic Judge of the Civil Court - District 4th Municipal Court District - Queens EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>Queens Democratic Delegate to Judicial Convention 33rd Assembly District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01406000033Queens Democratic Delegate to Judicial Convention 33rd Assembly District Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01406000033Queens Democratic Delegate to Judicial Convention 33rd Assembly District EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01406000033Queens Democratic Delegate to Judicial Convention 33rd Assembly District Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01406000033Queens Democratic Delegate to Judicial Convention 33rd Assembly District EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>Queens Democratic Delegate to Judicial Convention 40th Assembly District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01406000040Queens Democratic Delegate to Judicial Convention 40th Assembly District Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01406000040Queens Democratic Delegate to Judicial Convention 40th Assembly District EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01406000040Queens Democratic Delegate to Judicial Convention 40th Assembly District Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01406000040Queens Democratic Delegate to Judicial Convention 40th Assembly District EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>Richmond Democratic Female District Leader Democratic Leadership District 61</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01504700061Richmond Democratic Female District Leader Democratic Leadership District 61 Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01504700061Richmond Democratic Female District Leader Democratic Leadership District 61 EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01504700061Richmond Democratic Female District Leader Democratic Leadership District 61 Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01504700061Richmond Democratic Female District Leader Democratic Leadership District 61 EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>Richmond Democratic Male District Leader Democratic Leadership District 61</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01504800061Richmond Democratic Male District Leader Democratic Leadership District 61 Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01504800061Richmond Democratic Male District Leader Democratic Leadership District 61 EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01504800061Richmond Democratic Male District Leader Democratic Leadership District 61 Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/01504800061Richmond Democratic Male District Leader Democratic Leadership District 61 EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>Kings Republican Female State Committee 46th Assembly District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/02303100046Kings Republican Female State Committee 46th Assembly District Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/02303100046Kings Republican Female State Committee 46th Assembly District EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/02303100046Kings Republican Female State Committee 46th Assembly District Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/02303100046Kings Republican Female State Committee 46th Assembly District EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>Kings Republican Male State Committee 46th Assembly District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/02303200046Kings Republican Male State Committee 46th Assembly District Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/02303200046Kings Republican Male State Committee 46th Assembly District EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/02303200046Kings Republican Male State Committee 46th Assembly District Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/02303200046Kings Republican Male State Committee 46th Assembly District EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>Kings Republican Male State Committee 51st Assembly District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/02303200051Kings Republican Male State Committee 51st Assembly District Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/02303200051Kings Republican Male State Committee 51st Assembly District EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/02303200051Kings Republican Male State Committee 51st Assembly District Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/02303200051Kings Republican Male State Committee 51st Assembly District EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>Queens Republican Female State Committee 25th Assembly District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/02403100025Queens Republican Female State Committee 25th Assembly District Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/02403100025Queens Republican Female State Committee 25th Assembly District EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/02403100025Queens Republican Female State Committee 25th Assembly District Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/02403100025Queens Republican Female State Committee 25th Assembly District EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>Queens Republican Female State Committee 33rd Assembly District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/02403100033Queens Republican Female State Committee 33rd Assembly District Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/02403100033Queens Republican Female State Committee 33rd Assembly District EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/02403100033Queens Republican Female State Committee 33rd Assembly District Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/02403100033Queens Republican Female State Committee 33rd Assembly District EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>Queens Republican Male State Committee 25th Assembly District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/02403200025Queens Republican Male State Committee 25th Assembly District Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/02403200025Queens Republican Male State Committee 25th Assembly District EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/02403200025Queens Republican Male State Committee 25th Assembly District Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/02403200025Queens Republican Male State Committee 25th Assembly District EDLevel.csv">ED Level</a></td>
+		</tr><tr><td>Queens Republican Male State Committee 33rd Assembly District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/02403200033Queens Republican Male State Committee 33rd Assembly District Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/02403200033Queens Republican Male State Committee 33rd Assembly District EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/02403200033Queens Republican Male State Committee 33rd Assembly District Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/20210622Primary Election/02403200033Queens Republican Male State Committee 33rd Assembly District EDLevel.csv">ED Level</a></td>
+		</tr></tbody></table></div>
+            
+  </div>
+
+</div>
+
+</div>
+                            <div class="field__item" id="p2" data-id="2"><div class="field-collection-item field-collection-item--type-field-paragraph field-collection-item--view-mode-default ds-2col clearfix">
+
+  
+
+  <div class="group-left">
+    
+                        <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="/sites/default/files/icons/official-report-icon.png" width="43" height="58" alt="" typeof="foaf:Image" />
+
+</div>
+            
+  </div>
+
+  <div class="group-right">
+    
+
+                        <h2 class="field field--name-field-header field--type-string field--label-hidden field__item">SPECIAL - MARCH 23, 2021</h2>
+            
+
+                        <div class="clearfix text-formatted field field--name-field-content field--type-text-long field--label-hidden field__item"><table class="simple-table"><tbody><tr><th>Contest</th>
+			<th colspan="1">PDF</th>
+			<th colspan="1">CSV</th>
+		</tr><tr><td>Bronx Member of the City Council 11th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/3-23-2021_Special_Election_11th_Council/BX%20032321%20ENResult%2011CD%20by%20Rounds%20Final%20dtd041421.pdf">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/3-23-2021_Special_Election_11th_Council/BX%20032321%20ENResult%2011CD%20by%20Rounds%20Final%20dtd041421.xls">RCV Recap</a></td>
+		</tr><tr><td>Bronx Member of the City Council 15th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/3-23-2021_Special_Election_15th_Council/BX%20032321%20ENResult%2015CD%20by%20Rounds%20Final%20dtd041421.pdf">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/3-23-2021_Special_Election_15th_Council/BX%20032321%20ENResult%2015CD%20by%20Rounds%20Final%20dtd041421.xls">RCV Recap</a></td>
+		</tr></tbody></table><p><a class="button-full" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="d63d0fc8-32a9-4fc0-8fad-2a2c371444cd" href="/page/ranked-choice-results-march-23-2021-special-election-member-city-council-11th-special-election">Ranked Choice Voting Results for 11th Council District</a></p>
+
+<p> </p>
+
+<p><a class="button-full" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="d63d0fc8-32a9-4fc0-8fad-2a2c371444cd" href="/page/ranked-choice-results-march-23-2021-special-election-member-city-council-15th-special-election">Ranked Choice Voting Results for 15th Council District</a></p>
+
+<p> </p>
+</div>
+            
+  </div>
+
+</div>
+
+</div>
+                            <div class="field__item" id="p3" data-id="3"><div class="field-collection-item field-collection-item--type-field-paragraph field-collection-item--view-mode-default ds-2col clearfix">
+
+  
+
+  <div class="group-left">
+    
+                        <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="/sites/default/files/icons/official-report-icon.png" width="43" height="58" alt="" typeof="foaf:Image" />
+
+</div>
+            
+  </div>
+
+  <div class="group-right">
+    
+
+                        <h2 class="field field--name-field-header field--type-string field--label-hidden field__item">SPECIAL - FEBRUARY 23, 2021</h2>
+            
+
+                        <div class="clearfix text-formatted field field--name-field-content field--type-text-long field--label-hidden field__item"><table class="simple-table"><tbody><tr><th>Contest</th>
+			<th colspan="1">PDF</th>
+			<th colspan="1">CSV</th>
+		</tr><tr><td>Queens Member of the City Council 31st Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/2-23-2021_Special_Election_31st_Council/Queens_Member_of_the_City_Council_31st_Council_District_022321_RCV_ResultSummary_031921.pdf">RCV Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/2-23-2021_Special_Election_31st_Council/Queens_Member_of_the_City_Council_31st_Council_District_022321_RCV_ResultSummary_031921.csv">RCV Recap</a></td>
+		</tr></tbody></table><p><a class="button-full" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="d63d0fc8-32a9-4fc0-8fad-2a2c371444cd" href="/page/ranked-choice-results-february-23-2021-special-election-31st-council-district-queens-county">Ranked Choice Voting Results for 31st Council District</a></p>
+
+<table class="simple-table"><tbody><tr><th>Contest</th>
+			<th colspan="2">PDF</th>
+			<th colspan="2">CSV</th>
+		</tr><tr><td>Queens Member of the City Council 31st Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/2-23-2021_Special_Election_31st_Council/00400500031Queens%20Member%20of%20the%20City%20Council%2031st%20Council%20District%20Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/2-23-2021_Special_Election_31st_Council/00400500031Queens%20Member%20of%20the%20City%20Council%2031st%20Council%20District%20EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/2-23-2021_Special_Election_31st_Council/00400500031Queens%20Member%20of%20the%20City%20Council%2031st%20Council%20District%20Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/2-23-2021_Special_Election_31st_Council/00400500031Queens%20Member%20of%20the%20City%20Council%2031st%20Council%20District%20EDLevel.csv">ED Level</a></td>
+		</tr></tbody></table></div>
+            
+  </div>
+
+</div>
+
+</div>
+                            <div class="field__item" id="p4" data-id="4"><div class="field-collection-item field-collection-item--type-field-paragraph field-collection-item--view-mode-default ds-2col clearfix">
+
+  
+
+  <div class="group-left">
+    
+                        <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="/sites/default/files/images/ckeditor/icons/official-report-icon.png" width="43" height="58" alt="" typeof="foaf:Image" />
+
+</div>
+            
+  </div>
+
+  <div class="group-right">
+    
+
+                        <h2 class="field field--name-field-header field--type-string field--label-hidden field__item">SPECIAL - FEBRUARY 2, 2021</h2>
+            
+
+                        <div class="clearfix text-formatted field field--name-field-content field--type-text-long field--label-hidden field__item"><table class="simple-table"><tbody><tr><th>Contest</th>
+			<th colspan="2">PDF</th>
+			<th colspan="2">CSV</th>
+		</tr><tr><td>Queens Member of the City Council 24th Council District</td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/2-02-2021_Special_Election_24th_Council/00400500024Queens%20Member%20of%20the%20City%20Council%2024th%20Council%20District%20Recap.pdf">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/2-02-2021_Special_Election_24th_Council/00400500024Queens%20Member%20of%20the%20City%20Council%2024th%20Council%20District%20EDLevel.pdf">ED Level</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/2-02-2021_Special_Election_24th_Council/00400500024Queens%20Member%20of%20the%20City%20Council%2024th%20Council%20District%20Recap.csv">Recap</a></td>
+			<td><a href="/sites/default/files/pdf/election_results/2021/2-02-2021_Special_Election_24th_Council/00400500024Queens%20Member%20of%20the%20City%20Council%2024th%20Council%20District%20EDLevel.csv">ED Level</a></td>
+		</tr></tbody></table></div>
+            
+  </div>
+
+</div>
+
+</div>
+                            <div class="field__item" id="p5" data-id="5"><div class="field-collection-item field-collection-item--type-field-paragraph field-collection-item--view-mode-default ds-2col clearfix">
+
+  
+
+  <div class="group-left">
+    
+                        <div class="field field--name-field-icon field--type-image field--label-hidden field__item">  <img src="/sites/default/files/icons/archive-icon.png" width="58" height="47" alt="" typeof="foaf:Image" />
+
+</div>
+            
+  </div>
+
+  <div class="group-right">
+    
+
+                        <h2 class="field field--name-field-header field--type-string field--label-hidden field__item">Archive</h2>
+            
+
+                        <div class="clearfix text-formatted field field--name-field-content field--type-text-long field--label-hidden field__item"><ul><li><a href="/page/election-results-summary-2020" title="Election Results Summary 2020">2020</a></li>
+	<li><a href="/page/election-results-summary-2019" title="Election Results Summary 2019">2019</a></li>
+	<li><a href="/page/election-results-summary-2018" title="Election Results Summary 2018">2018</a></li>
+	<li><a href="/page/election-results-summary-2017" title="Election Results Summary 2017">2017</a></li>
+	<li><a href="/page/election-results-summary-2016" title="Election Results Summary 2016">2016</a></li>
+	<li><a href="/page/election-results-summary-2015" title="Election Results Summary 2015">2015</a></li>
+	<li><a href="/page/election-results-summary-2014" title="Election Results Summary 2014">2014</a></li>
+	<li><a href="/page/election-results-summary-2013" title="Election Results Summary 2013">2013</a></li>
+	<li><a href="/page/election-results-summary-2012" title="Election Results Summary 2012">2012</a></li>
+	<li><a href="/page/election-results-summary-2011" title="Election Results Summary 2011">2011</a></li>
+	<li><a href="/page/election-results-summary-2010" title="Election Results Summary 2010">2010</a></li>
+	<li><a href="/page/election-results-summary-2009" title="Election Results Summary 2009">2009</a></li>
+	<li><a href="/page/election-results-summary-2008" title="Election Results Summary 2008">2008</a></li>
+	<li><a href="/page/election-results-summary-2007" title="Election Results Summary 2007">2007</a></li>
+	<li><a href="/page/election-results-summary-2006" title="Election Results Summary 2006">2006</a></li>
+	<li><a href="/page/election-results-summary-2005" title="Election Results Summary 2005">2005</a></li>
+	<li><a href="/page/election-results-summary-2004-1999" title="Election Results Summary 2004 - 1999">2004 - 1999</a></li>
+</ul></div>
+            
+  </div>
+
+</div>
+
+</div>
+                    </div>
+    
+  </div><!-- /.content -->
+
+      <div class="links">
+      
+    </div><!-- /.links -->
+  
+</article><!-- /.node -->
+
+    </div>
+
+  </div>
+
+              </div>
+
+          </section><!-- /#content -->
+
+          
+                </div><!-- /.container -->
+  </div><!-- /#main -->
+  
+  
+  
+  <footer id="footer">
+      <div class="container">
+                          <div class="region region-footer-first">
+    
+<div id="block-contactexecutiveoffice" class="block block-block-content block-block-content40d0f586-7853-48e5-ae10-38d7723147fc">
+    
+        
+            
+
+                        <h2 class="field field--name-field-header field--type-string field--label-hidden field__item">Executive Office</h2>
+            
+
+                        <div class="clearfix text-formatted field field--name-field-address field--type-text field--label-hidden field__item"><p>32-42 Broadway, 7 Fl<br />New York, NY 10004</p>
+</div>
+            
+    <div class="field field--name-field-tel field--type-string field--label-inline">
+        <div class="field__label">Tel</div>
+                                    <div class="field__item">1-212-487-5400</div>
+                            </div>
+
+    </div>
+
+<div id="block-contactqueens" class="block block-block-content block-block-contentff8e67ff-2720-434e-92d6-d76bb2797b8e">
+    
+        
+            
+
+                        <h2 class="field field--name-field-header field--type-string field--label-hidden field__item">Queens</h2>
+            
+
+                        <div class="clearfix text-formatted field field--name-field-address field--type-text field--label-hidden field__item"><p>118-35 Queens Boulevard,<br />11 Fl<br />Forest Hills, NY 11375</p>
+</div>
+            
+    <div class="field field--name-field-tel field--type-string field--label-inline">
+        <div class="field__label">Tel</div>
+                                    <div class="field__item">1-718-730-6730</div>
+                            </div>
+
+    <div class="field field--name-field-fax field--type-string field--label-inline">
+        <div class="field__label">Fax</div>
+                                    <div class="field__item">1-718-459-3384</div>
+                            </div>
+
+    </div>
+
+  </div>
+
+                                    <div class="region region-footer-second">
+    
+<div id="block-contactbronx" class="block block-block-content block-block-content2da836e6-8928-4acc-9170-1889a7925771">
+    
+        
+            
+
+                        <h2 class="field field--name-field-header field--type-string field--label-hidden field__item">Bronx</h2>
+            
+
+                        <div class="clearfix text-formatted field field--name-field-address field--type-text field--label-hidden field__item"><p>1780 Grand Concourse, 5 Fl<br />Bronx, NY 10457</p>
+</div>
+            
+    <div class="field field--name-field-tel field--type-string field--label-inline">
+        <div class="field__label">Tel</div>
+                                    <div class="field__item">1-718-299-9017</div>
+                            </div>
+
+    <div class="field field--name-field-fax field--type-string field--label-inline">
+        <div class="field__label">Fax</div>
+                                    <div class="field__item">1-718-299-2140</div>
+                            </div>
+
+    </div>
+
+<div id="block-contactmanhattan" class="block block-block-content block-block-contentfa2b4daf-ee7e-4f3b-96f4-4708ec410a9d">
+    
+        
+            
+
+                        <h2 class="field field--name-field-header field--type-string field--label-hidden field__item">Manhattan</h2>
+            
+
+                        <div class="clearfix text-formatted field field--name-field-address field--type-text field--label-hidden field__item"><p>200 Varick Street, 10 Fl <br />New York, NY 10014</p>
+</div>
+            
+    <div class="field field--name-field-tel field--type-string field--label-inline">
+        <div class="field__label">Tel</div>
+                                    <div class="field__item">1-212-886-2100</div>
+                            </div>
+
+    <div class="field field--name-field-fax field--type-string field--label-inline">
+        <div class="field__label">Fax</div>
+                                    <div class="field__item">1-646-638-2047</div>
+                            </div>
+
+    </div>
+
+  </div>
+
+                                    <div class="region region-footer-third">
+    
+<div id="block-contactbrooklyn" class="block block-block-content block-block-content619f5199-a307-4b22-95ba-8b97646fb5d1">
+    
+        
+            
+
+                        <h2 class="field field--name-field-header field--type-string field--label-hidden field__item">Brooklyn</h2>
+            
+
+                        <div class="clearfix text-formatted field field--name-field-address field--type-text field--label-hidden field__item"><p>345 Adams Street, 4 Fl<br />Brooklyn, NY 11201</p>
+</div>
+            
+    <div class="field field--name-field-tel field--type-string field--label-inline">
+        <div class="field__label">Tel</div>
+                                    <div class="field__item">1-718-797-8800</div>
+                            </div>
+
+    <div class="field field--name-field-fax field--type-string field--label-inline">
+        <div class="field__label">Fax</div>
+                                    <div class="field__item">1-718-246-5958</div>
+                            </div>
+
+    </div>
+
+<div id="block-contactstatenisland" class="block block-block-content block-block-content7bca0b8b-9872-4957-8b5e-482f834a2403">
+    
+        
+            
+
+                        <h2 class="field field--name-field-header field--type-string field--label-hidden field__item">Staten Island</h2>
+            
+
+                        <div class="clearfix text-formatted field field--name-field-address field--type-text field--label-hidden field__item"><p>1 Edgewater Plaza, 4 Fl <br />Staten Island, NY 10305</p>
+</div>
+            
+    <div class="field field--name-field-tel field--type-string field--label-inline">
+        <div class="field__label">Tel</div>
+                                    <div class="field__item">1-718-876-0079</div>
+                            </div>
+
+    <div class="field field--name-field-fax field--type-string field--label-inline">
+        <div class="field__label">Fax</div>
+                                    <div class="field__item">1-718-876-0912</div>
+                            </div>
+
+    </div>
+
+  </div>
+
+                                    <div class="region region-footer-fourth">
+    
+<div id="block-smalllogo" class="block block-block-content block-block-content836bada8-7b74-4af3-b786-fcc2a986b040">
+    
+        
+            
+                        <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p><img alt="BOE NYC logo" src="/sites/default/files/images/ckeditor/logos/BOE-Logo-White.png" /></p>
+</div>
+            
+    </div>
+
+<div id="block-sociallinks" class="block block-block-content block-block-content0be35a42-9107-40a2-ba8c-61217f86eaf0">
+    
+        
+            
+                        <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p><a href="https://facebook.com/theNYCBoardofElections"><img alt="Follow on Facebook" src="/themes/custom/basic/images/inline-images/fb-icon.png" /></a>   <a href="http://instagram.com/boenyc"><img alt="Follow on Instagram" src="/themes/custom/basic/images/inline-images/instagram-icon.png" /></a>   <a href="https://twitter.com/boenyc"><img alt="Follow on Twitter" src="/themes/custom/basic/images/inline-images/twitter-icon.png" /></a></p>
+</div>
+            
+    </div>
+
+<div id="block-callusfooter" class="block block-block-content block-block-content08e01151-368b-499f-a3f8-54a4d7a1d75a">
+    
+        
+            
+                        <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p><strong>Call Us:</strong></p>
+
+<p><span class="notranslate">1-866-Vote-NYC (1-866-868-3692)</span> or <span class="notranslate">TTY-212-487-5496</span></p>
+
+<p>If outside NYC call<br /><span class="notranslate">1-212-VOTE-NYC (1-212-868-3692)</span></p>
+</div>
+            
+    </div>
+
+  </div>
+
+                </div>
+  </footer><!-- /#footer -->
+
+  <span class="toggle-bg"></span>
+</div><!-- /.layout-container -->
+
+  </div>
+
+    <button data-ultimenu-button="#ultimenu-main" class="button button--ultimenu" aria-label="Menu" value="Menu"><span class="bars">Menu</span></button>
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/351","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"data":{"extlink":{"extTarget":true,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"0","extLabel":"(link is external)","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"^.*\\.(odt|ODT|csv|CSV|doc|DOC|docx|DOCX|pdf|PDF)$","extCssExclude":"","extCssExplicit":"","extAlert":false,"extAlertText":"","mailtoClass":"0","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":null}},"google_analytics":{"account":"UA-177800463-1","trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":true,"trackDomainMode":2,"trackCrossDomains":["nyc.ny.us","www.nyc.ny.us","votenyc.nyc","www.votenyc.nyc"]},"ultimenu":{"canvasOff":"#header","canvasOn":"#main-wrapper, .featured-top, .site-footer"},"scroll_to_top":{"label":"Back to top"},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true},"user":{"uid":0,"permissionsHash":"07e60a14b250bf489c13ec5fba109929cad11154549e7046b4f3a5d362535486"}}</script>
+<script src="/sites/default/files/js/js_bS-zptut8yajG1TPSESnLpn_Ro7b_sk61BYutM7QOis.js"></script>
+<script src="//cdn.jsdelivr.net/npm/inputmask@5.0.3/dist/jquery.inputmask.min.js"></script>
+<script src="/sites/default/files/js/js_9HS7o1N3yqqgJpMdPBaUlYJTvdgG-eNwWGTZAuAhjlM.js"></script>
+
+      <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"64f92602ac","applicationID":"55450043","transactionName":"ZAYEZRNYXkYDVUJRV11MJ1IVUF9bTUZXX11sAAdSCVw=","queueTime":0,"applicationTime":26,"atts":"SEEHE1tCTUg=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>
