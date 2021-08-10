@@ -1,0 +1,5 @@
+Round elected is the round in which the candidate reached more than 50% of the vote.
+
+Results page adds a repetitive round whenever a winner is reached before the final round. I removed that round. So there will be one less round in json files than on the results page.
+
+Multiple elimination round transfer patterns could not be determined and those fields were left empty in the json file.
